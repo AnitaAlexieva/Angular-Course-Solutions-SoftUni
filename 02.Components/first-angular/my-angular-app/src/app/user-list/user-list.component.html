@@ -1,6 +1,8 @@
 
 <ul>
     <li *ngFor="let user of users">
-        {{user.name}} is {{user.age}}-years-old.
+        <span [ngClass]="user.status">
+            {{user.name}} is {{user.age}}-years-old.
+        </span>
     </li>
 </ul>

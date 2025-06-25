@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 type User = {
   name:string;
   age:number;
+  status:string;
 };
 @Component({
   selector: 'app-user-list',
@@ -11,11 +12,11 @@ type User = {
 })
 export class UserListComponent {
   users = [
-    {name:'Pesho', age:21},
-    {name:'Raq', age:31},
-    {name:'Petq', age:29},
-    {name:'Katq', age:41},
-    {name:'Gosho', age:53},
+    {name:'Pesho', age:21, status:'pink'},
+    {name:'Raq', age:31, status:'green'},
+    {name:'Petq', age:29, status:'yellow'},
+    {name:'Katq', age:41, status:'pink'},
+    {name:'Gosho', age:53, status:'pink'},
   ] as User[];
   //User-list е колекция на User
 }
