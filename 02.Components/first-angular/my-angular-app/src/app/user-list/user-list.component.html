@@ -1,8 +1,12 @@
 
-<ul>
+<ul *ngIf="isTogle">
     <li *ngFor="let user of users; index as i">
         <span [style.background-color] = "user.status">
             {{user.name}} is {{user.age}}-years-old.
         </span>
     </li>
 </ul>
+
+<button (click)="handleClick()">
+    {{isTogle ? 'Hide list!' : 'Show list!'}} 
+</button>

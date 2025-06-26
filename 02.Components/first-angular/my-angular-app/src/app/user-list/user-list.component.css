@@ -7,3 +7,11 @@
 .green{
     background-color: greenyellow;
 }
+
+button{
+    border: 1px solid black;
+    padding: 20px 40px;
+    background-color: antiquewhite;
+    font-size: 20px;
+    font-weight: 600;
+}

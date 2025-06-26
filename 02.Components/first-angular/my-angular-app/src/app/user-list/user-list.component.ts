@@ -5,12 +5,15 @@ type User = {
   age:number;
   status:string;
 };
+
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent {
+  isTogle = false;
+
   users = [
     {name:'Pesho', age:21, status:'pink'},
     {name:'Raq', age:31, status:'green'},
@@ -19,4 +22,10 @@ export class UserListComponent {
     {name:'Gosho', age:53, status:'pink'},
   ] as User[];
   //User-list е колекция на User
+
+  handleClick(){
+    console.log('clicked')
+    this.isTogle = !this.isTogle;
+    console.log(this.isTogle)
+  }
 }
