@@ -1,0 +1,12 @@
+.btn-user{
+    background-color: aquamarine;
+    padding: 20px 40px;
+    font-size: 20px;
+}
+.div-user{
+    padding-top: 40px;
+}
+.div-user input{
+    padding: 20px 40px;
+    font-size: 20px;
+}
