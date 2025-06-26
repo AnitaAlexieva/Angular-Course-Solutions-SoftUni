@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-playground',
@@ -7,8 +7,11 @@ import { Component } from '@angular/core';
 })
 export class PlaygroundComponent {
 
+  @Input('color') colorValue = 'white';
+
     handleInput(username:string){
       console.log(username);
+      console.log(this.colorValue)
     }
 
 }
