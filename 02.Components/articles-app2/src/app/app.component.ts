@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Article } from './models/article.model';
+import { ArticleData } from './data/data';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   protected title = 'Article Site';
+
+  articles: Article[] = [];
+
+  constructor() {
+    this.articles = new ArticleData().getData();
+  }
 }
