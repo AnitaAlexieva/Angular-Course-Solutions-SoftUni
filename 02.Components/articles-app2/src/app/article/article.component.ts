@@ -26,9 +26,20 @@ export class ArticleComponent {
   toggleImage(){
 
   }
-  readMore(){
+  readMore() {
+  this.articleDescLen += this.symbol;
 
+  if (this.articleDescLen >= this.articleDesc.length) {
+    this.descToShow = this.articleDesc;
+    this.showReadMoreBtn = false;
+    this.showHiddenBtn = true;
+  } else {
+    this.descToShow = this.articleDesc.substring(0, this.articleDescLen);
+    this.showReadMoreBtn = true;
+    this.showHiddenBtn = true;
   }
+}
+
   hideDesc(){
     
   }
