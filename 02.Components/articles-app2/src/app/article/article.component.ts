@@ -24,7 +24,12 @@ export class ArticleComponent {
   }
 
   toggleImage(){
-
+    this.imageIsShown= !this.imageIsShown;
+    if(this.imageIsShown){
+      this.imageButtonTitle = "Hide Image"
+    }else{
+      this.imageButtonTitle = "Show Image"
+    }
   }
   readMore() {
   this.articleDescLen += this.symbol;
