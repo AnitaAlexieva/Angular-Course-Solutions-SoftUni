@@ -10,9 +10,4 @@ import { ArticleData } from './data/data';
 export class AppComponent {
   protected title = 'Article Site';
 
-  articles: Article[] = [];
-
-  constructor() {
-    this.articles = new ArticleData().getData();
-  }
 }

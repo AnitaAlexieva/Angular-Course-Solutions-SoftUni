@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ArticleData } from '../data/data';
+import { Article } from '../models/article.model';
 
 @Component({
   selector: 'app-articles',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class ArticlesComponent {
 
+  articles: Article[] = [];
+
+  constructor() {
+    this.articles = new ArticleData().getData();
+  }
 }

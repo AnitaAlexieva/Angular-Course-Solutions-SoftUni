@@ -1,1 +1,5 @@
-<p>articles works!</p>
+<ul class="articles-list">
+  <li *ngFor="let a of articles">
+    <app-article [article]="a" [articleDesc]="a.description"></app-article>
+  </li>
+</ul>
