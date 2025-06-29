@@ -46,6 +46,9 @@ export class ArticleComponent {
 }
 
   hideDesc(){
-    
+    this.descToShow='';
+    this.articleDescLen=0;
+    this.showHiddenBtn=true;
+    this.showHiddenBtn=false;
   }
 }
