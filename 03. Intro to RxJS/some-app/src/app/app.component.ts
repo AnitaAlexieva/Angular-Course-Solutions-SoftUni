@@ -5,7 +5,6 @@ import { User } from './types/user';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  //changeDetection:ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   title = 'My playground';;
