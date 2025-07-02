@@ -8,9 +8,14 @@ import { UserService } from './user.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'My playground';;
+  title = 'My playground';
+  appUsers: User[] = [];
 
   constructor(public userService: UserService){
-    
+    this.appUsers = this.userService.users;
+  }
+
+  setUsers(inputName:HTMLInputElement, inputAge:HTMLInputElement){
+    this.userService.addUser(inputName,inputAge);
   }
 }
