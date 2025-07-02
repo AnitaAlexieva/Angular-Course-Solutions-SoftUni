@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { User } from './types/user';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,7 @@ import { User } from './types/user';
 export class AppComponent {
   title = 'My playground';;
 
+  constructor(public userService: UserService){
+    
+  }
 }
