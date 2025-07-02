@@ -17,5 +17,8 @@ export class AppComponent {
 
   setUsers(inputName:HTMLInputElement, inputAge:HTMLInputElement){
     this.userService.addUser(inputName,inputAge);
+    
+    //Additional finctionality
   }
+
 }

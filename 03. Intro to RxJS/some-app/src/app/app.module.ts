@@ -18,3 +18,15 @@ import { UserItemComponent } from './user-item/user-item.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+const p = new Promise((resolve, reject) =>{
+  console.log('Promise invoked');
+
+  setTimeout(() => {
+    resolve(111)
+  }, 3000);
+})
+
+p.then((data)=>{
+  console.log('from promise ', data)
+})
