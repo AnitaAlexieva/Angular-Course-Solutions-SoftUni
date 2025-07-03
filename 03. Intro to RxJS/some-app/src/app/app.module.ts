@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserItemComponent } from './user-item/user-item.component';
-import { Observable } from 'rxjs';
+import { interval, Observable } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -44,13 +44,37 @@ Promise.resolve(112)
 //Observables
 
 //async analogy
-const o = new Observable((observer) =>{
-  observer.next(200);
-  observer.next(201);
-  observer.next(202);
-  observer.next(203);
-});
+// const o = new Observable((observer) =>{
+//   observer.next(200);
+//   observer.next(201);
+//   observer.next(202);
+//   observer.next(203);
+// });
 
-o.subscribe((data) =>{
-  console.log('from observable: ', data)
+// o.subscribe((data) =>{
+//   console.log('from observable: ', data)
+// })
+
+//сами си разписваме интервал
+
+// const interval = (intervalValue:number) =>{
+//   const o = new Observable<number>((observer) =>{
+//       let counter = 0;
+//     //подаваме counter, като го увеличаваме с единица
+//     //през определен интервал от време, който сме задали
+//       const timer = setInterval(() =>{
+//         observer.next(counter++)
+//       }, intervalValue)
+
+//       //clear data on destroy
+//       return () =>{
+//         clearInterval(timer);
+//       }
+//   });
+
+//   return o;
+// }
+
+interval(2000).subscribe((data) => {
+  console.log('data from Interval: ', data)
 })
