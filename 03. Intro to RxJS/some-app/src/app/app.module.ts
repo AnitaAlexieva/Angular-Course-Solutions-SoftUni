@@ -30,3 +30,10 @@ const p = new Promise((resolve, reject) =>{
 p.then((data)=>{
   console.log('from promise ', data)
 })
+
+//Shorthand
+Promise.resolve(112)
+.then((data) => data * 10)
+.then((x) => console.log('from promise 2: ', x))
+
+
