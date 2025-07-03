@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserItemComponent } from './user-item/user-item.component';
+import { Observable } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,10 @@ import { UserItemComponent } from './user-item/user-item.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+//PROMISE
+// - promise are not lazy, code invokes!
+// - can not be canceled
 
 const p = new Promise((resolve, reject) =>{
   console.log('Promise invoked');
@@ -36,4 +41,16 @@ Promise.resolve(112)
 .then((data) => data * 10)
 .then((x) => console.log('from promise 2: ', x))
 
+//Observables
 
+//async analogy
+const o = new Observable((observer) =>{
+  observer.next(200);
+  observer.next(201);
+  observer.next(202);
+  observer.next(203);
+});
+
+o.subscribe((data) =>{
+  console.log('from observable: ', data)
+})
