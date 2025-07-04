@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import { User } from './types/user';
+import { jsonPlaceholderUser, User } from './types/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-    users = [
-      {name:'Pesho', age:21},
-      {name:'Raq', age:31},
-      {name:'Petq', age:29},
-      {name:'Katq', age:41},
-      {name:'Gosho', age:53},
-    ] as User [];
+    URL = 'http://jsonplaceholder.typicode.com/users';
+    users = [] as jsonPlaceholderUser [];
+
+    getUser(){
+      return fetch(this.URL).then((res) => res.json())
+    }
 
     addUser(inputName:HTMLInputElement, inputAge:HTMLInputElement){
       const user:User = {
@@ -20,8 +19,10 @@ export class UserService {
         age:Number(inputAge.value)
       }
 
-      this.users.push(user)
+      // this.users.push(user)
       inputName.value='';
       inputAge.value='';
     }
+
+    
 }

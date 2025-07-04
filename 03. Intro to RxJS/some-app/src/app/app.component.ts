@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { User } from './types/user';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { jsonPlaceholderUser, User } from './types/user';
 import { UserService } from './user.service';
 
 @Component({
@@ -7,17 +7,28 @@ import { UserService } from './user.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'My playground';
-  appUsers: User[] = [];
+    appUsers: jsonPlaceholderUser[] = [];
 
   constructor(public userService: UserService){
     this.appUsers = this.userService.users;
   }
+  // ngOnInit(): void {
+  //   throw new Error('Method not implemented.');
+  // }
+
+  ngOnInit(): void {
+    this.userService.getUser().then((users) => {
+      console.log('users data ', users);
+      this.appUsers=users;
+    }
+  )
+  }
 
   setUsers(inputName:HTMLInputElement, inputAge:HTMLInputElement){
     this.userService.addUser(inputName,inputAge);
-    
+
     //Additional finctionality
   }
 
