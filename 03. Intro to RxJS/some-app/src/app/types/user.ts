@@ -23,15 +23,17 @@ interface Company{
 
 export interface User2{
   
-    "id": number,
-    "name": string,
-    "username": string,
-    "email": string,
-    "phone": string,
+    id?: number;
+  name: string;
+  username?: string;
+  email: string;
+  address?: Address;
+  phone?: string;
+  company?: Company;
 
 }
 export interface jsonPlaceholderUser extends User2{
-    "address": Address,
-    "phone": string,
-    "company": Company
+     address?: Address;
+  phone?: string;
+  company?: Company;
   }

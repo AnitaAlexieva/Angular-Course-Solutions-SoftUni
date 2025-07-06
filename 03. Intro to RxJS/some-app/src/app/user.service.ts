@@ -14,12 +14,13 @@ export class UserService {
     }
 
     addUser(inputName:HTMLInputElement, inputAge:HTMLInputElement){
-      const user:User = {
-        name:inputName.value,
-        age:Number(inputAge.value)
-      }
+      const user = {
+        name: inputName.value,
+        email: inputAge.value,
 
-      // this.users.push(user)
+      } as jsonPlaceholderUser;
+
+     this.users = [...this.users, user];
       inputName.value='';
       inputAge.value='';
     }

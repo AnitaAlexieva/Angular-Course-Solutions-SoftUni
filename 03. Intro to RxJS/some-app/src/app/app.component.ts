@@ -10,6 +10,7 @@ import { UserService } from './user.service';
 export class AppComponent implements OnInit{
   title = 'My playground';
     appUsers: jsonPlaceholderUser[] = [];
+    isLoading = true;
 
   constructor(public userService: UserService){
     this.appUsers = this.userService.users;
@@ -19,17 +20,22 @@ export class AppComponent implements OnInit{
   // }
 
   ngOnInit(): void {
-    this.userService.getUser().then((users) => {
-      console.log('users data ', users);
-      this.appUsers=users;
-    }
-  )
-  }
+  this.userService.getUser().then((users) => {
+    console.log('users data ', users);
+
+    this.appUsers = [...users];  
+
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000);
+  });
+}
 
   setUsers(inputName:HTMLInputElement, inputAge:HTMLInputElement){
     this.userService.addUser(inputName,inputAge);
 
     //Additional finctionality
   }
+  
 
 }
