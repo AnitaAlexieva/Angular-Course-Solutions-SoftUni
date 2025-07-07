@@ -15,5 +15,9 @@ export class ApiService {
     return this.http.get<any>(`${api}/themes`);
   }
 
+  getPosts(){
+    const api = environment.apiUrl;
+
+    return this.http.get(`${api}/posts`);
   }
 }
