@@ -1,5 +1,8 @@
  <aside>
-            <div class="aside">
+    <div *ngIf="loading">
+        <app-loader/>
+    </div>
+            <div *ngIf="!loading" class="aside">
                 <h2 class="title">
                     Recent posts
                 </h2>
