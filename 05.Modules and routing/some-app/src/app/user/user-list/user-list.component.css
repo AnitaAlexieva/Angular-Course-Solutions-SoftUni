@@ -1,0 +1,13 @@
+.btn{
+    padding: 40px;
+    border: 2px solid fuchsia;
+    width: 50px;;
+}
+.btn p{
+    font-size: 20px;
+    text-align: center;
+}
+.btn:hover{
+    background-color:  fuchsia;
+    color: rgb(253, 250, 245);
+}
