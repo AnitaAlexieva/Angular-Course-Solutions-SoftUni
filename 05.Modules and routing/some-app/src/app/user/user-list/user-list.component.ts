@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../types/User';
+import { GlobalServiceService } from 'src/app/core/global-loader/global-service.service';
 
 @Component({
   selector: 'app-user-list',
@@ -12,16 +13,25 @@ export class UserListComponent implements OnInit{
   isLoading:boolean = false;
   users: User[] = [];
 
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService, private globalLoaderService: GlobalServiceService){}
 
   ngOnInit(): void {
     this.fetchUsers();
   }
 
   fetchUsers(){
+
+    //before fetch
+    this.globalLoaderService.showLoader();
+
+    //Start fetch
     this.userService.getUsers().subscribe((users)=>{
-      console.log(users)
       this.users=users;
+
+      setTimeout(() => {
+        //after fetch
+        this.globalLoaderService.hideLoader()
+      }, 5000);
     })
   }
   // fetchUsers(){
