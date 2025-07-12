@@ -4,6 +4,8 @@ import { GlobalLoaderComponent } from './global-loader/global-loader.component';
 import { SharedModule } from '../shared/shared.module';
 import { NavComponent } from './nav/nav.component';
 import { RouterModule } from '@angular/router';
+import { UserListComponent } from '../user/user-list/user-list.component';
+import { UserDetailsComponent } from '../user/user-details/user-details.component';
 
 
 
