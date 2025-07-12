@@ -1,0 +1,13 @@
+.nav button{
+    padding: 10px;
+    background-color: bisque;
+    color: rgb(78, 55, 26);
+    border: none;
+    border-radius: 20px;
+    margin: 10px;
+}
+.nav button:hover{
+    padding: 10px;
+    background-color:rgb(78, 55, 26);
+    color: bisque;
+}
