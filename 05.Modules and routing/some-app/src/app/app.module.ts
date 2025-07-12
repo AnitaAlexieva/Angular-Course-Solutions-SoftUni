@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import {HttpClientModule} from '@angular/common/http'
+import { TodoModule } from './todo/todo.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClientModule} from '@angular/common/http'
     SharedModule,
     CoreModule,
     UserModule,
-    HttpClientModule
+    HttpClientModule,
+    TodoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

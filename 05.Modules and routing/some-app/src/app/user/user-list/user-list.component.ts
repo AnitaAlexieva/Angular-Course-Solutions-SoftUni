@@ -28,10 +28,8 @@ export class UserListComponent implements OnInit{
     this.userService.getUsers().subscribe((users)=>{
       this.users=users;
 
-      setTimeout(() => {
-        //after fetch
-        this.globalLoaderService.hideLoader()
-      }, 5000);
+
+      this.globalLoaderService.hideLoader()
     })
   }
   // fetchUsers(){
