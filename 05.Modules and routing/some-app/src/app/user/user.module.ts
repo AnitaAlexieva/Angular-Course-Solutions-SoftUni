@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router';
     ,SharedModule,
     RouterModule.forChild([
           {path:'user/list', component:UserListComponent},
-          {path:'user/details', component:UserDetailsComponent}
+          {path:'user/details/:id', component:UserDetailsComponent}
         ])
   ],
   exports:[
