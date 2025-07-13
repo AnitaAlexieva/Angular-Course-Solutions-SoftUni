@@ -20,7 +20,8 @@ import { TodoModule } from './todo/todo.module';
     CoreModule,
     UserModule,
     HttpClientModule,
-    TodoModule
+    TodoModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
