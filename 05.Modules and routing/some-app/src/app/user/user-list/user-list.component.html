@@ -8,6 +8,12 @@
 
 <div>
     <ul>
-        <li *ngFor="let user of users">{{user.id}} - {{user.name}}</li>
+        <li 
+            class="item" 
+            *ngFor="let user of users"
+            [routerLink]="['/user', 'details', user.id]"
+            >
+            {{user.id}} - {{user.name}}
+        </li>
     </ul>
 </div>

@@ -11,3 +11,10 @@
     background-color:  fuchsia;
     color: rgb(253, 250, 245);
 }
+.item{
+    padding: 10px;
+}
+.item:hover{
+    background-color: aquamarine;
+    
+}
