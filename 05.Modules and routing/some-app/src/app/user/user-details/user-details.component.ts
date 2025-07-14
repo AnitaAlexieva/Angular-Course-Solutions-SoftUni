@@ -17,10 +17,13 @@ export class UserDetailsComponent implements OnInit{
   ngOnInit(): void {
 
     this.activatedRouter.params.subscribe((value) =>{
-      const id = value['id']
-      this.userService.getSingleUser(id).subscribe((user) =>{
-        console.log(user)
-      })
+      
+      console.log(this.activatedRouter.snapshot.data['user'])
+      
+      // const id = value['id']
+      // this.userService.getSingleUser(id).subscribe((user) =>{
+      //   console.log(user)
+      // })
     });
 
   }
