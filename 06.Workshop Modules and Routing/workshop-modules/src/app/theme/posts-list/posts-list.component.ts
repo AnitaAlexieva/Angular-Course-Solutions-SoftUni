@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
-import { Post } from '../types/post';
-import { flush } from '@angular/core/testing';
+import { ApiService } from 'src/app/api.service';
+import { Post } from 'src/app/types/post';
 
 @Component({
   selector: 'app-posts-list',
