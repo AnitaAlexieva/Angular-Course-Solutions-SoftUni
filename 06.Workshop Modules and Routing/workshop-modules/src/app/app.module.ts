@@ -11,6 +11,7 @@ import { PostsListComponent } from './posts-list/posts-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import { LoaderComponent } from './loader/loader.component';
 import { HomeComponent } from './home/home.component'
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,12 @@ import { HomeComponent } from './home/home.component'
     ThemesListComponent,
     PostsListComponent,
     LoaderComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    UserModule,
     CoreModule,
     SharedModule,
     HttpClientModule
