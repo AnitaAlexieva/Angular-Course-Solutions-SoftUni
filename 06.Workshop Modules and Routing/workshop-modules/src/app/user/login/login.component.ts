@@ -16,6 +16,6 @@ export class LoginComponent {
   login(ev:Event){
     ev.preventDefault()
     this.userService.login()
-    this.router.navigate(['/themes'])
+    this.router.navigate(['/home'])
   }
 }
