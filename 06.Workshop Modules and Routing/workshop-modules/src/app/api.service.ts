@@ -17,6 +17,12 @@ export class ApiService {
     return this.http.get<Theme[]>(`${api}/themes`);
   }
 
+  createTheme(themeName:string, themeText:string){
+    const {apiUrl} = environment
+    const playload = {themeName, themeText}
+    return this.http.post<Theme>(`${apiUrl}/themes`, playload)
+  }
+
   getPosts(limit?:number){
     const api = environment.apiUrl;
 
@@ -27,4 +33,6 @@ export class ApiService {
 
     return this.http.get<Post[]>(url);
   }
+
+
 }
