@@ -28,7 +28,8 @@ export class UserService {
         username:'Petko',
         email:'petko@abv.bg',
         phone:'123-123-321',
-        password:'petko123'
+        password:'petko123',
+        id:'5fa64b972183ce1728ff3720'
       }
 
       localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))

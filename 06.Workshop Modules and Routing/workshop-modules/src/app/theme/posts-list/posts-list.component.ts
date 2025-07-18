@@ -20,7 +20,7 @@ export class PostsListComponent implements OnInit {
       this.posts = posts;
       setTimeout(() => {
         this.loading = false;
-      }, 3500);
+      }, 1000);
     })
   }
 

@@ -28,8 +28,16 @@ export class ThemesListComponent implements OnInit{
 
       setTimeout(() => {
         this.loading=false
-      }, 4000);
+      }, 1500);
     })
   }
 
+  isSubscribed(theme:Theme){
+    const isSubscribedUser = theme.subscribers.find((s)=>{
+      return s == this.userService.user?.id;
+    })
+
+
+    return !isSubscribedUser;
+  }
 }
