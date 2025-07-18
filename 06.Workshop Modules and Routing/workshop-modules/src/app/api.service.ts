@@ -17,6 +17,11 @@ export class ApiService {
     return this.http.get<Theme[]>(`${api}/themes`);
   }
 
+  getTheme(id:string){
+    const {apiUrl}=environment;
+    return this.http.get<Theme>(`${apiUrl}/themes/${id}`)
+  }
+
   createTheme(themeName:string, themeText:string){
     const {apiUrl} = environment
     const playload = {themeName, themeText}
