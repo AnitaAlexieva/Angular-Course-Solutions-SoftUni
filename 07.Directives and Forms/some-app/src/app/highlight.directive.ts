@@ -7,7 +7,7 @@ export class HighlightDirective implements OnInit {
 
   constructor(private elRef: ElementRef, private renderer:Renderer2) { }
   ngOnInit(): void {
-      console.log(this.elRef)
+      // console.log(this.elRef)
 
       // Bad practise
       // this.elRef.nativeElement.style.background = 'orange'
@@ -25,11 +25,13 @@ export class HighlightDirective implements OnInit {
   }
 
   mouseEnterHandler(e: MouseEvent): void{
-    console.log(e)
-    this.renderer.setStyle(this.elRef.nativeElement, 'background', 'pink')
+    // console.log(e)
+    // this.renderer.setStyle(this.elRef.nativeElement, 'background', 'pink')
+    this.renderer.addClass(this.elRef.nativeElement, 'highlight')
   }
 
   mouseLeaveHandler(e:MouseEvent):void{
-    this.renderer.setStyle(this.elRef.nativeElement, 'background', 'initial')
+    // this.renderer.setStyle(this.elRef.nativeElement, 'background', 'initial')
+    this.renderer.removeClass(this.elRef.nativeElement, 'highlight')
   }
 }
