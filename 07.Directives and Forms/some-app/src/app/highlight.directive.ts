@@ -1,10 +1,12 @@
 import { Directive, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 
+type MyVoid =() =>void
 @Directive({
   selector: '[appHighlight]'
 })
 export class HighlightDirective implements OnInit,OnDestroy {
 
+  unsubFromEventsArray: MyVoid[]=[]
   constructor(private elRef: ElementRef, private renderer:Renderer2) { }
   ngOnInit(): void {
     // console.log(this.elRef)
@@ -15,13 +17,16 @@ export class HighlightDirective implements OnInit,OnDestroy {
     //Good practise
     // this.renderer.setStyle(this.elRef.nativeElement, 'background', 'purple')
     
-    this.renderer.listen(
+    const mouseEnterEvent = this.renderer.listen(
       this.elRef.nativeElement, 'mouseenter', this.mouseEnterHandler.bind(this)
     )
     
-    this.renderer.listen(
+    const mouseLeaveEvent =  this.renderer.listen(
       this.elRef.nativeElement, 'mouseleave', this.mouseLeaveHandler.bind(this)
     )
+
+    this.unsubFromEventsArray.push(mouseEnterEvent);
+    this.unsubFromEventsArray.push(mouseLeaveEvent)
   }
   
   mouseEnterHandler(e: MouseEvent): void{
@@ -36,5 +41,10 @@ export class HighlightDirective implements OnInit,OnDestroy {
   }
   ngOnDestroy(): void {
       console.log('Destroy invoked!')
+      console.log(this.unsubFromEventsArray)
+
+      this.unsubFromEventsArray.forEach((eventFn) => {
+        eventFn()
+      })
   }
 }
