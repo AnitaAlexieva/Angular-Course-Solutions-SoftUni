@@ -7,6 +7,7 @@ import { HighlightDirective } from './highlight.directive';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { MyRouterLinkDirective } from './my-router-link.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LoginComponent } from './login/login.component';
     HighlightDirective,
     HomeComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    MyRouterLinkDirective
   ],
   imports: [
     BrowserModule,
