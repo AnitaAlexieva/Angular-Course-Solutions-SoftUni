@@ -15,6 +15,12 @@
 <div *appMyStructural="isShown">Structural Directive - Usage 1</div>
 
 <!-- Usage 2 -->
- <ng-template [appMyStructural]="isShown">
+ <ng-template [appMyStructural]="isShown"
+  let-testMe="myCustomValue"
+  let-myNumberche=""
+  >
     <div>Structural Directive - Usage 2</div>
+    <div>My Num: {{myNumberche}}</div>
+    <div>MyCustomValue: {{testMe}}</div>
  </ng-template>
+
