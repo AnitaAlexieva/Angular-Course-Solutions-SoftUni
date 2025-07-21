@@ -10,7 +10,13 @@ export class LoginComponent {
 
   @ViewChild('loginForm') form:NgForm | undefined;
 
-  forSubmitHandler(){
+  //Renders statis content
+  // ngOnInit():void{}
+
+  //Renders the final content + dynamic content
+  // ngAfterViewInit():void{}
+
+  formSubmitHandler(){
 
     if(!this.form){
       return;
