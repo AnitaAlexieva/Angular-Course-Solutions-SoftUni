@@ -4,10 +4,10 @@ import { AddThemeComponent } from './add-theme/add-theme.component';
 import { CurrentThemeComponent } from './current-theme/current-theme.component';
 import { ThemeRoutingModule } from './theme-routing.module';
 import { ThemesListComponent } from './themes-list/themes-list.component';
-import { SharedModule } from '../shared/shared.module';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { MainComponent } from './main/main.component';
 import { LoaderComponent } from '../loader/loader.component';
+import { ShareddModule } from '../sharedd/sharedd.module';
 
 
 
@@ -23,7 +23,7 @@ import { LoaderComponent } from '../loader/loader.component';
   imports: [
     CommonModule,
     ThemeRoutingModule,
-    SharedModule,
+    ShareddModule,
   ]
 })
 export class ThemeModule { }

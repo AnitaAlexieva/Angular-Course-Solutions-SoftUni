@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./welcome-msg.component.css']
 })
 export class WelcomeMsgComponent {
-  @Input('isLogged') isLogged = false;
+  @Input('isLogged') isLogged! : boolean;
 }

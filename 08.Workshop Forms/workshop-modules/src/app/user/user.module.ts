@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserRoutingModule } from './user-routing-module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ShareddModule } from '../sharedd/sharedd.module';
 
 
 
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     UserRoutingModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ShareddModule
   ]
 })
 export class UserModule { }

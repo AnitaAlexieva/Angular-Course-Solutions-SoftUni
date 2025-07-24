@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { EmailDirective } from './validators/email.directive';
 import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
-import { UserRoutingModule } from '../user/user-routing-module';
 
 
 
 @NgModule({
-  declarations: [
-    WelcomeMsgComponent
-  ],
+  declarations: [EmailDirective, WelcomeMsgComponent],
   imports: [
-    CommonModule,UserRoutingModule
+    CommonModule
   ],
   exports:[
+    EmailDirective,
     WelcomeMsgComponent
   ]
 })
-export class SharedModule { }
+export class ShareddModule { }
