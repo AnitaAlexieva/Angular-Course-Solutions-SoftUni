@@ -28,6 +28,7 @@
                     <input type="password" name="password" id="password" placeholder="******"
                     ngModel
                     #inputPassword="ngModel"
+                    minlength="5"
                     required
                     >
                 </p>    
@@ -36,9 +37,9 @@
                     <p *ngIf="inputPassword.errors?.['required']" class="error">
                         Password is required!
                     </p>
-                    <!-- <p class="error">
-                        Password must be at least 4 characters!
-                    </p> -->
+                    <p class="error" *ngIf="inputPassword.errors?.['minlength']"> 
+                        Password must be at least 5 characters!
+                    </p>
                 </ng-container>
 
                 <button>Login</button>
