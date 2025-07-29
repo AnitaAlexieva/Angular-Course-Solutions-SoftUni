@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserRoutingModule } from './user-routing-module';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShareddModule } from '../sharedd/sharedd.module';
 
 
@@ -21,7 +21,8 @@ import { ShareddModule } from '../sharedd/sharedd.module';
     UserRoutingModule,
     RouterModule,
     FormsModule,
-    ShareddModule
+    ShareddModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }
