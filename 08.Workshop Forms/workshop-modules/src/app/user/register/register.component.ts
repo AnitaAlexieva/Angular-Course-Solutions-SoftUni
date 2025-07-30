@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { EMAIL_DOMAINS } from 'src/app/constants';
+import { emailValidator } from 'src/app/sharedd/validators/email-validator';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+   selector: 'app-register',
+   templateUrl: './register.component.html',
+   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
   form = this.fb.group({
     //controls
-    username:['gosho'],
-    email:['gosho@abv.bg'],
-    tel:['123-123-123'],
+    username:['', [Validators.required, Validators.minLength(4)]],
+    email:['',[ Validators.required, emailValidator(EMAIL_DOMAINS)]],
+    tel:[''],
     passGroup: this.fb.group({ password:['123'],rePassword:['1234532'] })
    
   })
