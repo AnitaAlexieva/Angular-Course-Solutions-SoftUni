@@ -6,7 +6,7 @@ import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
 
 
 @NgModule({
-  declarations: [EmailDirective, WelcomeMsgComponent],
+  declarations: [EmailDirective, WelcomeMsgComponent ],
   imports: [
     CommonModule
   ],

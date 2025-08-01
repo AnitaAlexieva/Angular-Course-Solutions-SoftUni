@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { EMAIL_DOMAINS } from 'src/app/constants';
 import { emailValidator } from 'src/app/sharedd/validators/email-validator';
+import { matchPasswordValidaiton } from 'src/app/sharedd/validators/match-password';
 
 @Component({
    selector: 'app-register',
@@ -14,7 +15,10 @@ export class RegisterComponent {
     username:['', [Validators.required, Validators.minLength(4)]],
     email:['',[ Validators.required, emailValidator(EMAIL_DOMAINS)]],
     tel:[''],
-    passGroup: this.fb.group({ password:['123'],rePassword:['1234532'] })
+    passGroup: this.fb.group({ password:['123'],rePassword:['1234532']
+     },   {
+         validators: [matchPasswordValidaiton('password', 'rePassword')]
+      })
    
   })
 
