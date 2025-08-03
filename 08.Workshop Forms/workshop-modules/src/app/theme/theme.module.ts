@@ -8,6 +8,7 @@ import { PostsListComponent } from './posts-list/posts-list.component';
 import { MainComponent } from './main/main.component';
 import { LoaderComponent } from '../loader/loader.component';
 import { ShareddModule } from '../sharedd/sharedd.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -24,6 +25,7 @@ import { ShareddModule } from '../sharedd/sharedd.module';
     CommonModule,
     ThemeRoutingModule,
     ShareddModule,
+    FormsModule
   ]
 })
 export class ThemeModule { }

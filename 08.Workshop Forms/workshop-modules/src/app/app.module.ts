@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component'
 import { UserModule } from './user/user.module';
 import { ThemeModule } from './theme/theme.module';
 import { ErrorComponent } from './error/error.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmailDirective } from './sharedd/validators/email.directive';
 import { ShareddModule } from './sharedd/sharedd.module';
 
@@ -27,7 +27,8 @@ import { ShareddModule } from './sharedd/sharedd.module';
     ThemeModule,
     ShareddModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

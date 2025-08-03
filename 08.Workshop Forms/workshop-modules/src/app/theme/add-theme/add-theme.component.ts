@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -10,12 +11,11 @@ export class AddThemeComponent {
 
   constructor(private apiService:ApiService){}
 
-  addTheme(ev:Event, themeName:string, postText:string){
-    ev.preventDefault()
-    console.log({themeName, postText})
+  addTheme(form: NgForm){
+   if(form.invalid){
+    return
+   }
 
-    this.apiService.createTheme(themeName, postText).subscribe((data)=>{
-      console.log({data})
-    })
+   console.log(form.value)
   }
 }
