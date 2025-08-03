@@ -68,7 +68,7 @@
     Repeat Password is required!
   </p>
 
-  <p class="error"
+      <p class="error"
      *ngIf="
         form.get('passGroup')?.errors?.['matchPasswordValidaiton'] &&
         !form.get('passGroup')?.get('rePassword')?.errors?.['required']
@@ -78,7 +78,7 @@
 </ng-container>
 
             </ng-container>
-            <button>Create Account</button>
+            <button [disabled]="form.invalid">Create Account</button>
 
             <p class="text-center">
                 Have an account?
