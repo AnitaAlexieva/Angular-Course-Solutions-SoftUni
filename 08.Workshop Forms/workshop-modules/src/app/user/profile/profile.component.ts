@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ProfileComponent {
 
+  isShowMode : boolean = false;
+
+  onShowEdit() : void{
+    this.isShowMode=true
+  } 
 }
