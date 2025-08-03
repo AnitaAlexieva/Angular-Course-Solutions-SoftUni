@@ -78,7 +78,10 @@
 </ng-container>
 
             </ng-container>
-            <button [disabled]="form.invalid">Create Account</button>
+            <button [disabled]="form.invalid"
+            [style]="{backgroundColor: form.invalid ? 'grey' : 'blue'}"
+
+            >Create Account</button>
 
             <p class="text-center">
                 Have an account?
