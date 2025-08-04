@@ -1,7 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'reduce'
+  name: 'reduce',
+  // pure:true; by Default, result  is memorized, invoked on change of the reference
+  // pure:false //not a pure function ,not memorized, invoked on every change
 })
 export class ReducePipe<T> implements PipeTransform {
 
@@ -12,6 +14,8 @@ export class ReducePipe<T> implements PipeTransform {
   ): unknown {
     //const sum = (acc, curr) => acc + curr;
     //[1,2,3,4].reduce(sum, 0);
+    console.log('Invoked from pipe');
+
     return array.reduce(callbackFn, initialValue);
   }
 
