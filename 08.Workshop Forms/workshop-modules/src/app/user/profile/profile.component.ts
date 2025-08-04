@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProfileDetails } from 'src/app/types/user';
 
 @Component({
   selector: 'app-profile',
@@ -8,6 +9,12 @@ import { Component } from '@angular/core';
 export class ProfileComponent {
 
   isShowMode : boolean = false;
+
+  profileDetails: ProfileDetails = {
+    username: 'John Doe',
+    email: 'john@gmail.com',
+    tel: '123-321-123'
+  }
 
   onShowEdit() : void{
     this.isShowMode=true
