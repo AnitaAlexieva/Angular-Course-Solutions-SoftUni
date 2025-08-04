@@ -33,8 +33,15 @@ export class ProfileComponent {
   saveProfileHandler():void{
     console.log('invoked!', this.form.value)
     if(this.form.invalid){
-      this.profileDetails = this.form.value as ProfileDetails
+      return
     }
+    this.profileDetails = this.form.value as ProfileDetails
+    this.onToggle()
+  }
+
+  onCancel(e: Event):void{
+    e.preventDefault();
+
     this.onToggle()
   }
 }
