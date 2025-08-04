@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { interval, map } from 'rxjs';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
+  constructor( private userService: UserService){}
+  ngOnInit(): void {
+    this.userService.loadUsers().subscribe(console.log)
+  }
   title = 'pipes-subjects';
 
   user = { name: 'Petko', age: 22, list: [1,2,3,4,5]}
