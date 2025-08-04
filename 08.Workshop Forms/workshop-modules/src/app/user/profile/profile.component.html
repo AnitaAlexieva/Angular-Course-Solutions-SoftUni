@@ -4,27 +4,31 @@
         <ng-container *ngIf="!isShowMode">
             <div class="flex">
                 <p>Username: </p>
-                <p>Johny</p>
+                <p>{{profileDetails.username}}</p>
             </div>
             <div class="flex">
                 <p>Email: </p>
-                <p>john.doe@gmail.com</p>
+                <p>{{profileDetails.email}}</p>
             </div>
             <div class="flex">
                 <p>Phone: </p>
-                <p>+359 885 888 888</p>
+                <p>{{profileDetails.tel}}</p>
             </div>
-            <button class="edit-button" (click)="onShowEdit()">Edit</button>
+            <button class="edit-button" (click)="onToggle()">Edit</button>
         </ng-container>
         <ng-container *ngIf="isShowMode">
-            <form>
+            <form [formGroup]="form" (ngSubmit)="saveProfileHandler()">
   <div class="flex">
     <p>Username: </p>
-    <input type="text" name="username" id="username" [(ngModel)]="profileDetails.username">
+    <input type="text" name="username" id="username" 
+    [(ngModel)]="profileDetails.username"
+    formControlName="username">
   </div>
   <div class="flex">
     <p>Email: </p>
-    <input type="email" name="email" id="email" [(ngModel)]="profileDetails.email">
+    <input type="email" name="email" id="email" 
+    [(ngModel)]="profileDetails.email"
+    formControlName="email">
   </div>
   <div class="flex">
     <p>Phone: </p>
@@ -32,7 +36,9 @@
       <select name="select-tel" id="select-tel" class="tel">
         <option value="+359">+359</option>
       </select>
-      <input type="text" name="tel" id="tel" [(ngModel)]="profileDetails.tel">
+      <input type="text" name="tel" id="tel" 
+      [(ngModel)]="profileDetails.tel"
+      formControlName="tel">
     </div>
   </div>
   <button class="red-button">Cancel</button>
