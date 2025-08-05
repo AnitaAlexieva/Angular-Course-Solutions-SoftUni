@@ -6,7 +6,6 @@ import { ThemeRoutingModule } from './theme-routing.module';
 import { ThemesListComponent } from './themes-list/themes-list.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { MainComponent } from './main/main.component';
-import { LoaderComponent } from '../loader/loader.component';
 import { ShareddModule } from '../sharedd/sharedd.module';
 import { FormsModule } from '@angular/forms';
 
@@ -18,7 +17,6 @@ import { FormsModule } from '@angular/forms';
     PostsListComponent,
     MainComponent,
     ThemesListComponent,
-    LoaderComponent,
     AddThemeComponent,
   ],
   imports: [

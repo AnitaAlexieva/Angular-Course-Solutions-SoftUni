@@ -11,12 +11,14 @@ import { ErrorComponent } from './error/error.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShareddModule } from './sharedd/sharedd.module';
 import { appInterceptorProvider } from './app.interceptor';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ErrorComponent,
+    AuthenticationComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,7 @@ import { appInterceptorProvider } from './app.interceptor';
     ShareddModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [appInterceptorProvider],
   bootstrap: [AppComponent]
