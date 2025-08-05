@@ -6,7 +6,7 @@ import {
   HttpInterceptor,
   HTTP_INTERCEPTORS
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, EMPTY, Observable, tap } from 'rxjs';
 import { API_URL } from './constants';
 
 @Injectable()
@@ -23,7 +23,23 @@ export class AppHttpInterceptor implements HttpInterceptor {
     })
     }
 
-    return next.handle(request);
+    return next.handle(request).pipe(
+      // tap((req)=>{
+      //   if(req instanceof HttpRequest){
+      //     console.log(req)
+      //   }
+      // })
+      catchError((err)=>{
+        if(err.status === 0){
+          console.error('Error from Interceptor', err)
+          return EMPTY;       
+         }
+          return [err]
+      }
+    
+    )
+
+    );
   }
 }
 
