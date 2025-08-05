@@ -7,6 +7,11 @@ import { ProfileComponent } from './user/profile/profile.component';
 const routes: Routes = [
   {path:'', pathMatch:'full', redirectTo:'/home'},
   {path:'home', component:HomeComponent},
+  {
+    path:'auth',
+    loadChildren:()=> import('./user/user.module')
+    .then((m)=>m.UserModule)
+  },
   {path:'**', redirectTo:'/404'},
   {path:'404', component:ErrorComponent},
   {path:'profile', component:ProfileComponent}

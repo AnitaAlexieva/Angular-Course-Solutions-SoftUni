@@ -21,7 +21,7 @@
                                 <div class="subscribers">
                                     <button *ngIf="isLogged && isSubscribed(theme)" class="subscribe">Subscribe</button>
                                     <button *ngIf="isLogged && !isSubscribed(theme)" class="unsubscribe">Unsubscribe</button>
-                                    <p>Subscribers: <span>{{theme.subscribers?.length || 0}}</span></p>
+                                    <p>Subscribers: <span>{{theme.subscribers.length || 0}}</span></p>
                                 </div>
                             </div>
                         </div>
