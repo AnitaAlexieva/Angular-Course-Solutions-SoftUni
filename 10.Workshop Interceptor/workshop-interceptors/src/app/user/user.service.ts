@@ -25,7 +25,7 @@ export class UserService {
   }
 
   login(email: string, password: string){
-     return this.http.post('/api/login', {email, password})
+     return this.http.post<UserForAuth>('/api/login', {email, password})
   }
 
   logout(){ 
@@ -33,5 +33,21 @@ export class UserService {
     this.user=undefined;
     localStorage.removeItem(this.USER_KEY)
 
+  }
+
+  register(
+    username:string,
+    email:string,
+    tel:string,
+    password:string,
+    rePassword:string
+  ){
+    return this.http.post<UserForAuth>('/api/register',{
+      username,
+      email,
+      tel,
+      password,
+      rePassword
+    })
   }
 }
