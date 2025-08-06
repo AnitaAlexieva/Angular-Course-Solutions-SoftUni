@@ -30,9 +30,8 @@ export class ApiService {
 
   //POSTS
   getPosts(limit?:number){
-    const api = environment.apiUrl;
 
-    let url = `${api}/posts`
+    let url = `/api/posts`
     if(limit){
       url += `?limit=${limit}`
     }
@@ -40,5 +39,10 @@ export class ApiService {
     return this.http.get<Post[]>(url);
   }
 
+createPost(themeId: string, postText: string){
+  return this.http.post<Post>(`/api/themes/${themeId}`, {
+    text: postText
+  });
+}
 
 }

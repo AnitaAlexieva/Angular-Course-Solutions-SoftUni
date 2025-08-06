@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { Theme } from 'src/app/types/theme';
@@ -28,5 +29,17 @@ export class CurrentThemeComponent implements OnInit {
 
     })
   }
+
+  addPost(form: NgForm) {
+  if (form.invalid) return;
+
+  const { postText } = form.value;
+
+  this.apiService.createPost(this.theme._id, postText).subscribe((newPost) => {
+    this.theme.posts.push(newPost);
+    form.reset();
+  });
+}
+
 
 }
