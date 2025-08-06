@@ -5,5 +5,13 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ErrorService {
-  
+  private apiError$$ = new BehaviorSubject(null);
+  public apiError$ = this.apiError$$.asObservable()
+
+  constructor() { }
+
+  setError(error:any):void{
+    this.apiError$$.next(error)
+    
+  }
 }
