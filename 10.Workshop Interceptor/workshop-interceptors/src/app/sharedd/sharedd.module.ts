@@ -4,11 +4,12 @@ import { EmailDirective } from './validators/email.directive';
 import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
 import { LoaderComponent } from './loader/loader.component';
 import { SlicePipe } from './pipes/slice.pipe';
+import { ElapsedTimePipe } from './pipes/elapsed-time.pipe';
 
 
 
 @NgModule({
-  declarations: [EmailDirective, WelcomeMsgComponent, LoaderComponent, SlicePipe],
+  declarations: [EmailDirective, WelcomeMsgComponent, LoaderComponent, SlicePipe, ElapsedTimePipe],
   imports: [
     CommonModule
   ],
@@ -16,7 +17,8 @@ import { SlicePipe } from './pipes/slice.pipe';
     EmailDirective,
     WelcomeMsgComponent,
     LoaderComponent,
-    SlicePipe
+    SlicePipe,
+    ElapsedTimePipe
   ]
 })
 export class ShareddModule { }
