@@ -12,6 +12,5 @@ export class ErrorService {
 
   setError(error:any):void{
     this.apiError$$.next(error)
-    
   }
 }
