@@ -26,6 +26,15 @@ export class ThemesListComponent implements OnInit{
       console.log(themes);
       this.themes = themes
 
+      const sortDatesCB = (
+        a:{created_at: string},
+        b:{created_at: string}
+      ) =>(new Date(b.created_at) as any) - (new Date(a.created_at) as any)
+
+      const temptThemes = themes.sort(sortDatesCB as any).slice(0,5);
+
+      this.themes = temptThemes
+
       setTimeout(() => {
         this.loading=false
       }, 1500);
