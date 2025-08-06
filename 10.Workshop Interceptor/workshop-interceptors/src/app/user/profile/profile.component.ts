@@ -1,25 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { EMAIL_DOMAINS } from 'src/app/constants';
 import { emailValidator } from 'src/app/sharedd/validators/email-validator';
 import { ProfileDetails } from 'src/app/types/user';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit{
 
   isShowMode : boolean = false;
 
   profileDetails: ProfileDetails = {
-    username: 'John Doe',
-    email: 'john@gmail.com',
-    tel: '123-321-123'
+    username: '',
+    email: '',
+    tel: ''
   }
 
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder, private userService:UserService){}
+  ngOnInit(): void {
+    const {username, email,  tel} = this.userService.user!
+
+    this.profileDetails = {
+      username,
+      email,
+      tel,
+    }
+
+    this.form.setValue({
+      username,
+      tel,
+      email
+    })
+  }
   form = this.fb.group({
     username: ['',[Validators.required, Validators.minLength(5)]],
     email:['', [Validators.required, emailValidator(EMAIL_DOMAINS)]],
@@ -36,7 +52,11 @@ export class ProfileComponent {
       return
     }
     this.profileDetails = this.form.value as ProfileDetails
-    this.onToggle()
+    const { username, email, tel } = this.profileDetails;
+
+    this.userService.updateProfile(username, email, tel).subscribe(()=>{
+      this.onToggle()
+    })
   }
 
   onCancel(e: Event):void{

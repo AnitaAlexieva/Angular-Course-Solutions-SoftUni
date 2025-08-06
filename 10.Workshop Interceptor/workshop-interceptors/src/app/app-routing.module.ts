@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { ErrorComponent } from './core/error/error.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {path:'', pathMatch:'full', redirectTo:'/home'},
@@ -13,8 +14,9 @@ const routes: Routes = [
     .then((m)=>m.UserModule)
   },
   {path:'error', component:ErrorComponent},
+  {path:'404', component:NotFoundComponent},
+  {path:'profile', component:ProfileComponent},
   {path:'**', redirectTo:'/404'},
-  {path:'profile', component:ProfileComponent}
 ];
 
 @NgModule({
